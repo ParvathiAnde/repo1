@@ -1,0 +1,436 @@
+Introduction to unix 
+--------------------
+
+Agenda
+-------
+Day1 : what unix, why unix, Windows vs unix, Terminal, Environment setup, Basic commands
+Day2 : Text processing commands, file permissions, pattern matching
+Day3 : Editor - vi, shell, shell scripting, control and looping structures 
+Day4 : partice 
+
+-------------------------------------------------------------------------------
+Unix
+-----
+Operating system 
+introduced in the year 1960 
+multi - user system 
+multi - tasking system 
+command based 
+security - 
+Fast
+Highly stabilized 
+Frequent updates - windows 
+
+Linux vs Unix
+--------------
+Unix is not totally open source 
+Linux is totally an opensource 
+
+
+in terms of security both are highly secured 
+
+unix is majorly used on work stations and servers 
+linux is used several systems 
+
+unix has less file system support 
+Linux is more file system support 
+
+unix was written by C and assembly languages 
+Linux C and other high level languages 
+
+
+unix : AIX, macOS, Solaris
+linux : RedHat, Ubuntu 
+
+
+Architecture of Unix
+--------------------
+kernel - memory management, task scheduling
+shell - processes your request 
+Directories/ Files /process - File system
+commands & utilities 
+
+
+windows 
+-------
+file
+folder
+drive
+
+
+Environment 
+------------
+Unix playground
+
+https://lex.infosysapps.com/web/en/app/toc/lex_auth_012761083203747840518/overview
+
+
+
+
+
+Basic commands 
+--------------- 
+Work with files 
+ls, rm 
+
+ls --> list the files, directiories 
+
+
+Work with directories 
+mkdir, rmdir, cd, pwd 
+
+mkdir --> make/ create a directory 
+cd --> change directory 
+cd .. --> to come out of the directory 
+cd / --> move to root directory 
+pwd --> present working directory 
+rmdir --> remove the directory 
+
+
+
+Work with other tools 
+cal, bc, who, uname, echo, clear, tty, which, type, cat 
+
+i. creating a file 
+
+a. touch filename --> create an empty file
+ 
+b. cat 
+
+     --> creating a file 
+     --> add the content, append the content, over write 
+     --> read the file as well
+
+
+syntax
+-------
+cat > filename 
+
+ >
+       i) kernel will check whether a file with same is existing or not 
+      ii) if file exist 
+             -> it will rewrite or override the contents 
+     iii) if the file does not exist 
+             -> creates a file with the name we provide 
+
+
+Syntax
+-------
+cat >> file 
+>> 
+      i) kernel will check whether a file with same is existing or not 
+      ii)if file exist 
+            -> it will append the new content 
+      iii) if the file not exist 
+            -> create the new file 
+
+Syntax
+------
+<
+
+cat < filename 
+
+cat filename 
+
+
+display content in the file 
+
+
+
+c) vi --> create the file 
+   editor will
+Syntax
+------
+vi filename 
+
+--> to insert content i
+--> esc :wq --> save and quit the file
+
+
+
+pwd
+---
+present working directory 
+
+
+mkdir --> make directory 
+------
+
+Syntax
+------
+mkdir directoryname
+
+create directory by the name specified 
+NOTE : can create a directory inside other 
+
+
+rmdir -> remove directory  
+-----
+
+Syntax
+------
+rmdir directoryname 
+
+it will delete the directory if it is empty 
+
+
+
+rmdir -r directoryname 
+
+it will delete the directory if it has content 
+
+
+
+rmdir -i directoryname 
+it will ask `before deleting the directory 
+
+
+ls
+---
+list the files in directory 
+
+options
+--------
+-a --> to display hidden files 
+
+-l --> description of files 
+
+-i --> inode number 
+
+-r --> reverse order 
+
+-d --> list directory 
+
+-1 --> display line by line 
+
+-t --> sort the last modified file
+
+-u --> display last access file and sort the content 
+
+-F --> indicator 
+
+
+
+rm --> remove filename 
+---
+syntax 
+------
+rm filename 
+ 
+options 
+-------
+-i --> ask for confirmition 
+-r --> remove with content 
+
+-----------------------------------------------------------------------------------------------
+Day 2 
+-----
+Working with other tools 
+------------------------
+1. cal --> used to display calender 
+
+options 
+-------
+-m To display monday as the first day of the week 
+-1 To display current month calender
+-y To display 12 months of the current calender
+-3 To display previous, current and next month of the calender 
+-j To display dates of current month continuesly (1 - 365)
+-w to display week no 
+2020 calender of 2020 is displayed 
+-jy To display dates of year in numerical order (1- 365)
+ cal -3 24 08 2020
+
+
+2. date 
+
+option 
+-d 
+%a abbrieviated weekday name (mon, tue)
+%A abbrieviated full weekday name (monday)
+%b abbrievated month name (jan, feb)
+%B abbrievated full month name (january, febuary)
+%c display both date and time 
+%C display the centuary
+%d display the day of the month
+%m display month 
+%y display last 2 digits of the year 
+%Y display 4 digits of year
+%H display hour in 24 hours format 
+%I display hour in 12 hour format
+%M display minutes 
+%S display seconds 
+%x display date:month:year
+%X display Hour:Minutes:Second 
+%r display 12 hour clock time 
+
+
+3. man --> describes briefly the specified commands
+
+man 
+
+options
+ls
+printf
+-I ls
+-a chmod
+
+
+
+
+4. who --> loged in remotely in unix machine 
+
+options 
+-m display all information of logged on users 
+-a display all information of logged on users 
+-q display all login names and no of users logged on 
+
+5. echo --> print the data 
+-e enable interpretation of backslash escapes 
+-E disable interpretation of backslash
+
+
+6. printf --> display data 
+%d integer 
+%s string 
+
+
+7. bc --> used as calculator 
+
+
+8. tty --> print terminal information 
+
+9. type --> display where the command is shell or utility program
+
+10. which mkdir --> display path in which software is installed 
+
+11. pipeline --> combine 
+
+wc -> word count 
+
+-l print line count
+-w print word count
+-c print byte count 
+-m print character count
+
+Text Processing in unix 
+------------------------
+search --> head, tail, cut 
+
+analyze --> comm diff
+
+sort 
+
+uniq
+
+tr 
+
+ 
+
+head --> fetch the lines from the top/ begining of file 
+----
+by default we have 10 line 
+
+Syntax
+------
+head filename 
+
+
+
+tail --> fetch the lines from the bottom/ last  of the file
+by default 10 lines 
+
+Syntax
+------
+tail filename 
+
+
+ option
+--------
+-n --> specific no of lines 
+-c --> no of bytes of data from file 
+  
+
+cut --> extract the data from the file 
+----
+
+Syntax
+------
+cut filename 
+
+-c --> bytes 
+-d --> delimiter 
+
+
+sort 
+----
+arrange the values in order (a-z)(0-9)
+
+Note : 
+bhargavi
+101
+Anitha
+anu
+102
+
+
+apply sort command on above --> numbers followed letters 
+
+						--> small letters followed capital letters 
+
+
+Syntax
+------
+sort [option] [file]
+
+options 
+-------
+-t specify delimiter 
+-k specify starting column
+-r display in reverse order 
+-n sort numerical data 
+-u remove duplicates
+
+
+comm
+-----
+compares two sorted files 
+
+comm [option] file1 file2
+
+Note: in output we get 3 columns
+
+1st col --> unique values of 1st col
+2nd col --> unique values of 2nd col
+3rd col --> comm values of 1st co, 2nd col
+
+option
+------
+-1 dont display first col
+-2 dont display second col
+-12 dont display first, second col
+--nocheck-order campares if files are not in sorted order
+
+diff
+----
+find the difference 
+
+
+diff [option] file1, file2
+
+a(!) --> add
+d(-)--> delete 
+c(+) --> change 
+
+
+< --> deals with first line 
+> --> deals with second line 
+
+
+-q reports whether file differ or not 
+
+
+
+
+
+
